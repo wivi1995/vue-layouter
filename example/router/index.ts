@@ -15,12 +15,17 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
+    path: '/data',
+    name: 'Data',
+    component: () => import(/* webpackChunkName: "data" */ '../views/Data.vue')
+  },
+  {
     path: '/login',
     name: 'Login',
     meta: {
       layout: 'blankLayout'
     },
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   }
 ]
 

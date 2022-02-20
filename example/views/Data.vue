@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <div class="data-view">
     <button @click="() => $router.push('/login')">Login Page</button>
-    <button @click="() => $router.push('/data')">Data Page</button>
-    <div v-for="item in num" :key="item">
-      {{ item }}
+    <button @click="() => $router.push('/home')">Home Page</button>
+    <div>
+      This is data page
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default Vue.extend({
 })
 </script>
 <style lang="postcss" scoped>
-.home {
+.data-view {
   height: 100%;
   overflow-y: auto;
 }

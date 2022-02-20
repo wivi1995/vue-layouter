@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <button @click="handleToLogin">返回登录页面</button>
+    <div v-for="item in num" :key="item">
+      {{ item }}
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import HelloWorld from '../components/HelloWorld.vue' // @ is an alias to /src
 
 export default Vue.extend({
   name: 'Home',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      num: 100
+    }
+  },
+  methods: {
+    handleToLogin () {
+      this.$router.push('/login')
+    }
   }
 })
 </script>
+<style lang="postcss" scoped>
+.home {
+  height: 100%;
+  overflow-y: auto;
+}
+</style>

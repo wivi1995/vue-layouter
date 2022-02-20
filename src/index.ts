@@ -1,4 +1,8 @@
 import Vue, { ComponentOptions, PluginFunction, AsyncComponent } from 'vue'
+import VueRouter from 'vue-router'
+import './types'
+
+console.log(VueRouter)
 
 type Component = ComponentOptions<Vue> | typeof Vue | AsyncComponent
 

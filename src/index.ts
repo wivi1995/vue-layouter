@@ -2,8 +2,6 @@ import Vue, { ComponentOptions, PluginFunction, AsyncComponent } from 'vue'
 import VueRouter from 'vue-router'
 import './types'
 
-console.log(VueRouter)
-
 type Component = ComponentOptions<Vue> | typeof Vue | AsyncComponent
 
 export interface LayoutConfig {
@@ -21,7 +19,7 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
     functional: true,
     render (h, context) {
       const root = context.parent.$root
-      const router = root.$router
+      const router: VueRouter = root.$router
       const viewlayout = root.$options.viewlayout
       if (!router) throw new Error('You need to install vue-router!')
       if (!viewlayout) throw new Error('You need to initialize VueViewlayout!')

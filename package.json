@@ -2,18 +2,22 @@
   "name": "vue-view-layout",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "unpkg": "dist/vue-view-layout.min.js",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "rollup --config rollup.config.js",
+    "build:es": "rollup --config rollup.config.js",
+    "build:umd": "rollup --config rollup.config.js --format umd",
     "build:types": "tsc --build tsconfigtypes.json",
+    "build": "rimraf dist && npm run build:es && npm run build:umd && npm run build:types",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "files": [
-    "types",
     "dist"
   ],
-  "typings": "dist/types/index.d.ts",
   "dependencies": {},
   "peerDependencies": {
     "vue-router": ">=3.0.0"
@@ -44,7 +48,10 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
+    "minimist": "^1.2.5",
+    "rimraf": "^3.0.2",
     "rollup": "^2.67.3",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
     "rollup-plugin-vue": "^5.1.9",
     "sass": "^1.26.5",

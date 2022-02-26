@@ -1,8 +1,6 @@
-import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
+import { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
-
-Vue.use(VueRouter)
+import Login from '../views/Login.vue'
 
 export const routes: Array<RouteConfig> = [
   {
@@ -25,12 +23,6 @@ export const routes: Array<RouteConfig> = [
     meta: {
       layout: 'blankLayout'
     },
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
+    component: Login
   }
 ]
-
-const router = new VueRouter({
-  routes
-})
-
-export default router

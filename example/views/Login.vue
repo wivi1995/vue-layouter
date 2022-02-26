@@ -2,7 +2,7 @@
   <div class="login-view">
     <div class="login-form">
       <h1>
-        view layout plugin
+        vue layouter plugin
       </h1>
       <div>
         <input class="login-input"/>

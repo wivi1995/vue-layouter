@@ -24,6 +24,6 @@ const viewLayout = new VueViewLayout({
 
 new Vue({
   router,
-  viewlayout: viewLayout,
+  viewLayout: viewLayout,
   render: h => h(App)
 }).$mount('#app')

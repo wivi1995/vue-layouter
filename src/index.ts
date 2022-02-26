@@ -20,13 +20,14 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
     render (h, context) {
       const root = context.parent.$root
       const router: VueRouter = root.$router
-      const viewlayout = root.$options.viewlayout
+
+      const viewLayout = router.app.$options.viewLayout
       if (!router) throw new Error('You need to install vue-router!')
-      if (!viewlayout) throw new Error('You need to initialize VueViewlayout!')
+      if (!viewLayout) throw new Error('You need to initialize VueViewlayout!')
 
       const { route } = router.resolve(root.$route.fullPath)
-      const layoutName: string = route.meta?.layout || viewlayout.defaultLayout
-      const matchedLayout = viewlayout.getLayout(layoutName)
+      const layoutName: string = route.meta?.layout || viewLayout.defaultLayout
+      const matchedLayout = viewLayout.getLayout(layoutName)
 
       return matchedLayout ? h(matchedLayout.component) : h('route-view')
     }

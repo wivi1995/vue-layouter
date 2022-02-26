@@ -7,4 +7,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* complete plugin development ([f7d418c](https://github.com/Linnanli/vue-view-layout/commit/f7d418cb3c95e6a7ed66aa2d4866b5cc54a67d91))
+* complete plugin development ([f7d418c](https://github.com/Linnanli/vue-layouter/commit/f7d418cb3c95e6a7ed66aa2d4866b5cc54a67d91))

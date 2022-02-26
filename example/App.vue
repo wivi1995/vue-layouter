@@ -1,5 +1,5 @@
 <template>
-  <layout-view />
+  <layouter-view />
 </template>
 
 <style lang="scss">

@@ -62,7 +62,7 @@ const buildConfig = {
 if (argv.format === 'umd') {
   buildConfig.output.format = 'umd'
   delete buildConfig.output.dir
-  buildConfig.output.file = 'dist/vue-view-layout.min.js'
+  buildConfig.output.file = 'dist/vue-layouter.min.js'
   buildConfig.plugins.push(
     terser({
       output: {

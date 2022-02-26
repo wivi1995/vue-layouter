@@ -1,8 +1,8 @@
 
 import Vue from 'vue'
-import VueViewLayout from '../../../src/index'
+import VueLayouter from '../../../src/index'
 
-export const viewLayout = new VueViewLayout({
+export const layouter = new VueLayouter({
   layouts: [
     {
       name: 'defaultLayout',

@@ -10,22 +10,25 @@ export const routes: Array<RouteConfig> = [
     path: '/'
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/data',
-    name: 'Data',
-    component: () => import(/* webpackChunkName: "data" */ '../views/Data.vue')
-  },
-  {
     path: '/login',
     name: 'Login',
     meta: {
       layout: 'blankLayout'
     },
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
+    meta: {
+      layout: 'defaultLayout'
+    }
+  },
+  {
+    path: '/data',
+    name: 'Data',
+    component: () => import(/* webpackChunkName: "data" */ '../views/Data.vue')
   }
 ]
 

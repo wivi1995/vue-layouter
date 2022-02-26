@@ -8,17 +8,21 @@ const FakeComponent = Vue.extend({
 
 export const routes: Array<RouteConfig> = [
   {
-    path: '/',
-    name: 'Index',
-    component: FakeComponent
+    redirect: '/login',
+    path: '/'
   },
   {
-    path: '/error',
-    name: 'Error',
+    path: '/login',
+    name: 'Login',
     component: FakeComponent,
     meta: {
       layout: 'blankLayout'
     }
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: FakeComponent
   }
 ]
 

@@ -15,26 +15,26 @@ export interface Options {
 }
 
 const layoutPlugin: PluginFunction<Options> = function (Vue) {
-  Vue.component('LayoutView', {
+  Vue.component('LayouterView', {
     functional: true,
     render (h, context) {
       const root = context.parent.$root
       const router: VueRouter = root.$router
 
-      const viewLayout = router.app.$options.viewLayout
+      const layouter = router.app.$options.layouter
       if (!router) throw new Error('You need to install vue-router!')
-      if (!viewLayout) throw new Error('You need to initialize VueViewlayout!')
+      if (!layouter) throw new Error('You need to initialize VueLayouter!')
 
       const { route } = router.resolve(root.$route.fullPath)
-      const layoutName: string = route.meta?.layout || viewLayout.defaultLayout
-      const matchedLayout = viewLayout.getLayout(layoutName)
+      const layoutName: string = route.meta?.layout || layouter.defaultLayout
+      const matchedLayout = layouter.getLayout(layoutName)
 
       return matchedLayout ? h(matchedLayout.component) : h('route-view')
     }
   })
 }
 
-class VueViewLayout {
+class VueLayouter {
   static install = layoutPlugin
 
   options: Options
@@ -50,4 +50,4 @@ class VueViewLayout {
   }
 }
 
-export default VueViewLayout
+export default VueLayouter

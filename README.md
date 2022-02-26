@@ -1,4 +1,4 @@
-# vue-view-layout
+# vue-layouter
 
 ## Project setup
 ```

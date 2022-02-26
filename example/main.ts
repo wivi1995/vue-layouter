@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import VueViewLayout from '../src/index'
+import VueLayouter from '../src/index'
 import DefaultLayout from './layouts/DefaultLayout.vue'
 import BlankLayout from './layouts/BlankLayout.vue'
 
 Vue.config.productionTip = false
 
-Vue.use(VueViewLayout)
+Vue.use(VueLayouter)
 
-const viewLayout = new VueViewLayout({
+const layouter = new VueLayouter({
   layouts: [
     {
       name: 'defaultLayout',
@@ -24,6 +24,6 @@ const viewLayout = new VueViewLayout({
 
 new Vue({
   router,
-  viewLayout: viewLayout,
+  layouter,
   render: h => h(App)
 }).$mount('#app')

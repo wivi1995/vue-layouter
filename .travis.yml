@@ -1,0 +1,15 @@
+language: node_js
+os:
+  - 'linux'
+  - 'windows'
+  - 'mac'
+node_js:
+  - '12'
+  - '14'
+  - '16'
+env:
+  global:
+    - YARN_GPG=no
+script:
+  - npm run test:unit && npm run report-coverage
+  

@@ -93,7 +93,7 @@
   "standard-version": {
     "scripts": {
       "prerelease": "npm run test:unit && npm run build",
-      "posttag": "git push --follow-tags origin master && npm publish"
+      "posttag": "npm publish"
     }
   }
 }

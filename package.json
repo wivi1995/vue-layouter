@@ -1,7 +1,7 @@
 {
   "name": "vue-layouter",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "unpkg": "dist/vue-layouter.min.js",

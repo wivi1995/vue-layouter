@@ -5,7 +5,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
 import babel from '@rollup/plugin-babel'
 import typescript from 'rollup-plugin-typescript2'
-import { terser } from 'rollup-plugin-terser'
+// import { terser } from 'rollup-plugin-terser'
 import minimist from 'minimist'
 
 const argv = minimist(process.argv.slice(2))
@@ -28,7 +28,7 @@ const baseConfig = {
     babel: {
       exclude: 'node_modules/**',
       extensions: ['.js', '.jsx', '.vue'],
-      babelHelpers: 'bundled'
+      babelHelpers: 'bundled',
     }
   }
 }
@@ -44,7 +44,7 @@ const buildConfig = {
   output: {
     name: 'VueViewLayout',
     format: 'esm',
-    dir: 'dist/esm'
+    file: 'dist/vue-layouter.esm.js'
   },
   plugins: [
     typescript(),
@@ -61,15 +61,19 @@ const buildConfig = {
 
 if (argv.format === 'umd') {
   buildConfig.output.format = 'umd'
-  delete buildConfig.output.dir
-  buildConfig.output.file = 'dist/vue-layouter.min.js'
-  buildConfig.plugins.push(
-    terser({
-      output: {
-        ecma: 5
-      }
-    })
-  )
+  buildConfig.output.file = 'dist/vue-layouter.js'
+  // buildConfig.plugins.push(
+  //   terser({
+  //     output: {
+  //       ecma: 5
+  //     }
+  //   })
+  // )
+}
+
+if (argv.format === 'cjs') {
+  buildConfig.output.format = 'cjs'
+  buildConfig.output.file = 'dist/vue-layouter.common.js'
 }
 
 export default buildConfig

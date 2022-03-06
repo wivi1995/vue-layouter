@@ -26,7 +26,7 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
       if (!layouter) throw new Error('You need to initialize VueLayouter!')
 
       const { route } = router.resolve(root.$route.fullPath)
-      const layoutName: string = route.meta?.layout || layouter.defaultLayout
+      const layoutName: string = (route.meta ? route.meta.layout : null) || layouter.defaultLayout
       const matchedLayout = layouter.getLayout(layoutName)
 
       return matchedLayout ? h(matchedLayout.component) : h('route-view')
@@ -46,7 +46,7 @@ class VueLayouter {
   }
 
   getLayout (layoutName: string): LayoutConfig | undefined {
-    return this.options.layouts?.find((layoutConfig) => layoutConfig.name === layoutName)
+    return this.options.layouts ? this.options.layouts.find((layoutConfig) => layoutConfig.name === layoutName) : undefined
   }
 }
 

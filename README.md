@@ -1,5 +1,15 @@
 # vue-layouter
 
+<p align="center">
+  <a href="https://www.travis-ci.org/wivi1995/vue-layouter">
+    <img alt="Build status" src="https://www.travis-ci.org/wivi1995/vue-layouter.svg?branch=master">
+  </a>
+  <a href='https://coveralls.io/github/wivi1995/vue-layouter?branch=master'>
+    <img src='https://coveralls.io/repos/github/wivi1995/vue-layouter/badge.svg?branch=master' alt='Coverage Status' />
+  </a>
+  <img alt="NPM" src="https://img.shields.io/npm/l/vue-layouter">
+</p>
+
 ## Project setup
 ```
 yarn install

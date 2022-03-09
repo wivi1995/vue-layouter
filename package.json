@@ -25,6 +25,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wivi1995/vue-layouter.git"
+  },
   "dependencies": {},
   "peerDependencies": {
     "vue-router": ">=3.0.0"
@@ -93,8 +97,7 @@
   },
   "standard-version": {
     "scripts": {
-      "prerelease": "npm run test:unit && npm run build",
-      "posttag": "npm publish"
+      "prerelease": "npm run test:unit && npm run build"
     }
   }
 }

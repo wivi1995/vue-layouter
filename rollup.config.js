@@ -42,7 +42,7 @@ const buildConfig = {
   input: './src/index.ts',
   external,
   output: {
-    name: 'VueViewLayout',
+    name: 'VueLayouter',
     format: 'esm',
     file: 'dist/vue-layouter.esm.js'
   },

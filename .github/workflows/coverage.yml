@@ -16,8 +16,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: Install
+        run: npm run test:unit && npm run report-coverage
       # Runs a single command using the runners shell
-      - name: 
+      - name: Run report coverage
         run: npm run test:unit && npm run report-coverage
 

@@ -16,9 +16,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Install
-        run: npm install
+      - name: Install & Run Test
+        run: npm install && npm run test:unit
       # Runs a single command using the runners shell
-      - name: Run report coverage
-        run: npm run test:unit && npm run report-coverage
-
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

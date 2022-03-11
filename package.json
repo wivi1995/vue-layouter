@@ -8,6 +8,11 @@
   "typings": "dist/types/index.d.ts",
   "license": "MIT",
   "author": "wivi1995",
+  "keywords": [
+    "vue",
+    "layout",
+    "layouter"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:esm": "rollup --config rollup.config.js",

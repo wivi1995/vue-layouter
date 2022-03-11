@@ -23,7 +23,8 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",

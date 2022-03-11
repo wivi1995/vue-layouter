@@ -1,4 +1,4 @@
-name: VueLayouter Coverage
+name: build
 
 on:
   push:

@@ -6,6 +6,7 @@
   "module": "dist/vue-layouter.esm.js",
   "unpkg": "dist/vue-layouter.js",
   "typings": "dist/types/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:esm": "rollup --config rollup.config.js",

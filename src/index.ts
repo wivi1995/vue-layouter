@@ -21,8 +21,8 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
       const root = context.parent.$root
       const router: VueRouter = root.$router
 
-      const layouter = router.app.$options.layouter
       if (!router) throw new Error('You need to install vue-router!')
+      const layouter = router.app.$options.layouter
       if (!layouter) throw new Error('You need to initialize VueLayouter!')
 
       const { route } = router.resolve(root.$route.fullPath)

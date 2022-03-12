@@ -1,43 +1,41 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Vue, { ComponentOptions } from 'vue'
 import VueRouter from 'vue-router'
 import { router } from './config/router'
-import VueLayout from '../../src/index'
+import VueLayoutēr from '../../src/index'
 import { layouter } from './config/layouts'
 
-const localVue = createLocalVue({
-  layouter,
-  router
-})
-
-localVue.use(VueRouter)
-localVue.use(VueLayout)
-
-const customMount = <V extends Vue>(options: ComponentOptions<V>) => {
-  const wrapper = mount(options, {
-    router,
+describe('render LayouterView', () => {
+  const localVue = createLocalVue({
     layouter,
-    localVue
+    router
   })
-  return wrapper
-}
+  
+  localVue.use(VueRouter)
+  localVue.use(VueLayoutēr)
 
-describe('LayouterView', () => {
   it('render default layout', async () => {
-    const wrapper = customMount({
+    const wrapper = mount({
       render (h) {
         return h('LayouterView')
       }
+    }, {
+      router,
+      layouter,
+      localVue
     })
     expect(wrapper.find('div').text()).toBe('blank-layout')
   })
 
   it('switch to blank layout', async () => {
     router.push('/home')
-    const wrapper = customMount({
+    const wrapper = mount({
       render (h) {
         return h('LayouterView')
       }
+    }, {
+      router,
+      layouter,
+      localVue
     })
     expect(wrapper.find('div').text()).toBe('default-layout')
   })

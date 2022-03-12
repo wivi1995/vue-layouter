@@ -26,6 +26,20 @@ describe('render LayouterView', () => {
     expect(wrapper.find('div').text()).toBe('blank-layout')
   })
 
+  it("render a layout that doesn't exist", async () => {
+    router.push('/home2')
+    const wrapper = mount({
+      render (h) {
+        return h('LayouterView')
+      }
+    }, {
+      router,
+      layouter,
+      localVue
+    })
+    expect(wrapper.vm.$children[0].$options.name).toBe('FakeComponent')
+  })
+
   it('switch to blank layout', async () => {
     router.push('/home')
     const wrapper = mount({

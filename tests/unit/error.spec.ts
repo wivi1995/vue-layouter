@@ -24,7 +24,7 @@ describe('test LayouterView error', () => {
     }).toThrow('You need to install vue-router!')
   })
 
-  it('test not exist layouter', async () => {
+  it('test not exist VueLayouter', async () => {
     const localVue = createLocalVue({
       router,
     })

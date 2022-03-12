@@ -23,6 +23,14 @@ export const routes: Array<RouteConfig> = [
     path: '/home',
     name: 'Home',
     component: FakeComponent
+  },
+  {
+    path: '/home2',
+    name: 'Home2',
+    component: FakeComponent,
+    meta: {
+      layout: 'notExistLayout'
+    }
   }
 ]
 

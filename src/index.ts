@@ -29,7 +29,7 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
       const layoutName: string = (route.meta ? route.meta.layout : null) || layouter.defaultLayout
       const matchedLayout = layouter.getLayout(layoutName)
 
-      return matchedLayout ? h(matchedLayout.component) : h('route-view')
+      return matchedLayout ? h(matchedLayout.component) : h('router-view')
     }
   })
 }

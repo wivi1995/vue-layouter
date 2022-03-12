@@ -1,7 +1,7 @@
 # vue-layouter
 
 <p align="center">
-  <a href="https://www.travis-ci.org/wivi1995/vue-layouter">
+  <a href="https://github.com/wivi1995/vue-layouter/actions/workflows/coverage.yml">
     <img alt="Build status" src="https://github.com/wivi1995/vue-layouter/actions/workflows/coverage.yml/badge.svg?branch=master">
   </a>
   <a href='https://coveralls.io/github/wivi1995/vue-layouter?branch=master'>

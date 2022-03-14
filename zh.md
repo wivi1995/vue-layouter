@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="./zh.md">中文</a>
+  <a href="./README.md">English</a>
 </p>
 
 ## 安装

@@ -81,7 +81,9 @@ new Vue({
 
 ### 渲染布局
 
-1. 在`src/App.vue`文件中定义布局组件渲染节点, 路由匹配到的组件将渲染在这里.
+1. 在`src/App.vue`文件中创建`layouter-view`组件实例.
+
+2. 匹配到的布局组件将在这里渲染.
 
 ``` html
 <template>

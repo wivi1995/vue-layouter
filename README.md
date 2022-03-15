@@ -1,6 +1,6 @@
 # vue-layouter
 
-这是一个为路由route components提供扩展布局的vue插件.
+This is a vue plugin that provides extended layouts for route component.
 
 <p align="center">
   <a href="https://github.com/wivi1995/vue-layouter/actions/workflows/coverage.yml">
@@ -16,23 +16,19 @@
   <a href="./zh.md">中文</a>
 </p>
 
-## 安装
-
----
+## Installation
 
 ```
 npm install vue-layouter
 ```
 
-## 如何使用
+## Quickstart
 
----
+### Create layout component
 
-### 创建布局组件
+1. Create a directory called `layouts/` inside the main directory of your application.
 
-1. 在应用程序的主目录中创建一个名为 `layouts/` 的目录.
-
-2. 在布局目录中创建一个名为 `default.vue` 的布局组件, 例如:`src/layouts/default.vue`.
+2. Inside the `layouts/` directory create a layout called `default.vue`, for example:`src/layouts/default.vue`.
 
 ``` html
 <template>
@@ -46,13 +42,13 @@ npm install vue-layouter
 </template>
 ```
 
-### 创建布局配置
+### Create the layouter instance
 
-1. 定义布局, 每个布局应该映射一个组件。
+1. Define some layouts, Each route should map to a component。
 
-2. 创建 layouter 实例，然后传 `layouts` 配置.
+2. Create the layouer instance and pass the `layouts` option.
 
-3. 将layouter实例挂载到vue根实例.
+3. Mount the layout instance to the vue instance.
 
 ```javascript
 import Vue from 'vue'
@@ -79,9 +75,11 @@ new Vue({
 }).$mount('#app')
 ```
 
-### 渲染布局
+### Render layout
 
-1. 在`src/App.vue`文件中定义布局组件渲染节点, 路由匹配到的组件将渲染在这里.
+1. Create an instance of the `layouter-view` component in the `src/App.vue` file.
+
+2. The matched layout components will be rendered here.
 
 ``` html
 <template>
@@ -89,7 +87,7 @@ new Vue({
 </template>
 ```
 
-2. 在任何所需的路由中扩展此布局，只需在路由的元对象中包含属性 `layout: defaultLayout`.
+2. Extend this layout in any desired route, simply include the property `layout: auth` in meta object of the route.
 
 ``` javascript
 import Vue from 'vue'

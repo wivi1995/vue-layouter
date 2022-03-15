@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.5](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2022-03-15)
+
+
+### Bug Fixes
+
+* cannot read properties of router ([b2cc080](https://github.com/wivi1995/vue-layouter/commit/b2cc08080a8c52576af2b430bdfc33b709008cd1))
+* connat render router-view ([7ecce27](https://github.com/wivi1995/vue-layouter/commit/7ecce27102f1587b7cf6851de22eb6eb77f86e58))
+
 ### [0.0.1-alpha.4](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2022-03-11)
 
 ### [0.0.1-alpha.3](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2022-03-11)

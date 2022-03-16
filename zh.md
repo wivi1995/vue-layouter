@@ -14,6 +14,7 @@
 
 <p align="center">
   <a href="./README.md">English</a>
+  <a href="https://codesandbox.io/s/vue-layouter-example-t3eqxi">例子</a>
 </p>
 
 ## 安装

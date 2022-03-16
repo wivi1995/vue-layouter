@@ -13,7 +13,8 @@ This is a vue plugin that provides extended layouts for route component.
 </p>
 
 <p align="center">
-  <a href="./zh.md">中文</a>
+  <a href="./zh.md">中文</a> | 
+  <a href="https://codesandbox.io/s/vue-layouter-example-t3eqxi">example</a>
 </p>
 
 ## Installation

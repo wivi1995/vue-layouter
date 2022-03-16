@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.6](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2022-03-16)
+
 ### [0.0.1-alpha.5](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2022-03-15)
 
 

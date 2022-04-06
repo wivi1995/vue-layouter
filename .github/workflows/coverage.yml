@@ -17,7 +17,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Install & Run Test
-        run: npm install && npm run test:unit
+        run: npm ci && npm run test:unit
       # Runs a single command using the runners shell
       - name: Coveralls
         uses: coverallsapp/github-action@master

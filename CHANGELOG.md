@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.7](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2022-04-07)
+
+
+### Bug Fixes
+
+* cannot run command: "build" ([395df8b](https://github.com/wivi1995/vue-layouter/commit/395df8bd341b352a1bf3af21e59d990d3caa8d78))
+* cannot run command: "test:unit" ([ea5688e](https://github.com/wivi1995/vue-layouter/commit/ea5688edffd0242c14896cf3a318ba1edeac6a83))
+
 ### [0.0.1-alpha.6](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2022-03-16)
 
 ### [0.0.1-alpha.5](https://github.com/wivi1995/vue-layouter/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2022-03-15)

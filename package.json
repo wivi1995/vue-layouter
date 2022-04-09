@@ -1,6 +1,6 @@
 {
   "name": "vue-layouter",
-  "version": "0.0.1-alpha.7",
+  "version": "0.0.1-alpha.8",
   "private": false,
   "main": "dist/vue-layouter.common.js",
   "module": "dist/vue-layouter.esm.js",

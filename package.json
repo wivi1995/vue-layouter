@@ -19,7 +19,7 @@
     "build:umd": "rollup --config rollup.config.js --format umd",
     "build:cjs": "rollup --config rollup.config.js --format cjs",
     "build:types": "tsc --build tsconfigtypes.json",
-    "build": "rimraf dist && npm run build:esm && npm run build:umd && npm run build:cjs && npm run build:types",
+    "build:file": "rimraf dist && npm run build:esm && npm run build:umd && npm run build:cjs && npm run build:types",
     "release:major": "standard-version -r major",
     "release:minor": "standard-version -r minor",
     "release:patch": "standard-version -r patch",
@@ -105,7 +105,7 @@
   },
   "standard-version": {
     "scripts": {
-      "prerelease": "npm run test:unit && npm run build"
+      "prerelease": "npm run test:unit && npm run build:file"
     }
   }
 }

@@ -4,6 +4,11 @@ import './types'
 
 type Component = ComponentOptions<Vue> | typeof Vue | AsyncComponent
 
+interface LayoutFileModules {
+  filePath: string
+  fileModule: Component
+}
+
 export interface LayoutConfig {
   name: string
   component: Component
@@ -34,6 +39,39 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
   })
 }
 
+const loadFiles = require.context('./layouts-entry', false, /\.ts$/)
+const isAutoLoad: boolean = process.env.__VUE_LAYOUTER_AUTO_LOAD__ || false
+
+let layoutFileModules = [] as LayoutFileModules[]
+if (isAutoLoad) {
+  layoutFileModules = loadFiles('./index.ts').default
+}
+
+const formatLayoutName = (path: string) => {
+  path = path.replace('./', '')
+  const names = (path.match(/.*?(?=(\/index)?\.(vue|js|ts|tsx|jsx))/g) || [])[0].split('/')
+  let layoutName = ''
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i]
+    layoutName += i === 0 ? firstLowerCase(name) : firstUpperCase(name)
+  }
+  layoutName = layoutName.endsWith('Layout') ? layoutName : `${layoutName}Layout`
+  return layoutName
+}
+
+const firstUpperCase = (str: string) => str[0].toUpperCase() + str.slice(1)
+
+const firstLowerCase = (str: string) => str[0].toLowerCase() + str.slice(1)
+
+const generateLayoutsConfig = () => {
+  return layoutFileModules.map((fileModule) => {
+    return {
+      name: formatLayoutName(fileModule.filePath),
+      component: fileModule.fileModule
+    }
+  })
+}
+
 class VueLayouter {
   static install = layoutPlugin
 
@@ -41,6 +79,7 @@ class VueLayouter {
   defaultLayout: string
   constructor (options?: Options) {
     this.options = options || {}
+    this.options.layouts = isAutoLoad ? generateLayoutsConfig() : this.options.layouts
     const defaultLayout = this.options.defaultLayout
     this.defaultLayout = typeof defaultLayout === 'string' ? defaultLayout : 'defaultLayout'
   }

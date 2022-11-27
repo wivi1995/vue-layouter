@@ -1,3 +1,5 @@
+const VueLayouterWebpackPlugin = require('./webpack')
+
 module.exports = {
   pages: {
     index: {
@@ -6,5 +8,12 @@ module.exports = {
       filename: 'index.html',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new VueLayouterWebpackPlugin({
+        layoutsDir: './example/layouts'
+      })
+    ]
   }
 }

@@ -16,8 +16,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Install & Run Test
-        run: npm ci && npm run test:unit
+      
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+
+      - name: Run Test
+        run: npm run test:unit
+
       # Runs a single command using the runners shell
       - name: Coveralls
         uses: coverallsapp/github-action@master

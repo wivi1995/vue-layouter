@@ -1,4 +1,4 @@
-const VueLayouterWebpackPlugin = require('./webpack')
+const GenerateLayoutConfigWebpackPlugin = require('./webpack')
 
 module.exports = {
   pages: {
@@ -11,7 +11,7 @@ module.exports = {
   },
   configureWebpack: {
     plugins: [
-      new VueLayouterWebpackPlugin({
+      new GenerateLayoutConfigWebpackPlugin({
         layoutsDir: './example/layouts'
       })
     ]

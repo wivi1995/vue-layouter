@@ -39,17 +39,18 @@ const layoutPlugin: PluginFunction<Options> = function (Vue) {
   })
 }
 
-const loadFiles = require.context('./layouts-entry', false, /\.ts$/)
 const isAutoLoad: boolean = process.env.__VUE_LAYOUTER_AUTO_LOAD__ || false
 
 let layoutFileModules = [] as LayoutFileModules[]
 if (isAutoLoad) {
+  const loadFiles = require.context('./layouts-entry', false, /\.ts$/)
   layoutFileModules = loadFiles('./index.ts').default
 }
 
 const formatLayoutName = (path: string) => {
   path = path.replace('./', '')
-  const names = (path.match(/.*?(?=(\/index)?\.(vue|js|ts|tsx|jsx))/g) || [])[0].split('/')
+  const matchedName = (path.match(/.*?(?=(\/index)?\.(vue|js|ts|tsx|jsx))/g) || []) as RegExpMatchArray
+  const names = matchedName[0].split('/')
   let layoutName = ''
   for (let i = 0; i < names.length; i++) {
     const name = names[i]

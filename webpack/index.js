@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const { DefinePlugin } = require('webpack')
 
-class VueLayouterWebpackPlugin {
+class GenerateLayoutConfigWebpackPlugin {
   layoutsDir = null
   constructor(options = {}) {
     this.layoutsDir = path.resolve(process.cwd(), options.layoutsDir || './src/layouts')
@@ -29,4 +29,4 @@ class VueLayouterWebpackPlugin {
   }
 }
 
-module.exports = VueLayouterWebpackPlugin
+module.exports = GenerateLayoutConfigWebpackPlugin

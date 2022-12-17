@@ -4,6 +4,7 @@ import { router } from './config/router'
 import VueLayouter from '../../src/index'
 import { layouter } from './config/layouts'
 
+// 'jest' test throws error without printing error message
 beforeEach(() => {
   jest.spyOn(console, 'error')
   ;(console.error as any).mockImplementation(() => {})

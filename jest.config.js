@@ -4,5 +4,8 @@ module.exports = {
   collectCoverageFrom: [
     "<rootDir>/src/**/*.ts"
   ],
-  coverageDirectory: "coverage"
+  coverageDirectory: "coverage",
+  modulePathIgnorePatterns: [
+    "<rootDir>/src/layouts-entry/"
+  ]
 }

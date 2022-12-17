@@ -106,7 +106,9 @@
   },
   "standard-version": {
     "scripts": {
-      "prerelease": "npm run test:unit && npm run build"
+      "prerelease": "npm run test:unit",
+      "postbump": "npm run build",
+      "posttag": "git push --follow-tags --no-verify origin master"
     }
   }
 }

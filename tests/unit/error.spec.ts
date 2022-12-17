@@ -4,6 +4,15 @@ import { router } from './config/router'
 import VueLayouter from '../../src/index'
 import { layouter } from './config/layouts'
 
+beforeEach(() => {
+  jest.spyOn(console, 'error')
+  ;(console.error as any).mockImplementation(() => {})
+})
+
+afterEach(() => {
+  ;(console.error as any).mockRestore()
+})
+
 describe('test LayouterView error', () => {
   it('test not exist router', async () => {
     const localVue = createLocalVue({
@@ -41,6 +50,6 @@ describe('test LayouterView error', () => {
         router,
         localVue
       })
-    }).toThrow(Error)
+    }).toThrow('You need to initialize VueLayouter!')
   })
 })
